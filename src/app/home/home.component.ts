@@ -15,15 +15,42 @@ import { TodoComponent } from '../todo/todo.component';
       </form>
     </section>
     <section>
-      <app-todo [todo]="todo"></app-todo>
+      <app-todo *ngFor="let todo of todolist" [todo]="todo"></app-todo>
     </section>
   `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  todo: Todo = {
-    id: 1,
-    content: 'coder',
-    isDone: true,
-  };
+  todolist: Todo[] = [
+    {
+      id: 1,
+      content: 'coder',
+      isDone: true,
+    },
+    {
+      id: 2,
+      content: 'drink water',
+      isDone: true,
+    },
+    {
+      id: 3,
+      content: 'take a nap',
+      isDone: false,
+    },
+    {
+      id: 4,
+      content: 'draw',
+      isDone: false,
+    },
+    {
+      id: 5,
+      content: 'send a mail',
+      isDone: false,
+    },
+    {
+      id: 6,
+      content: 'new action',
+      isDone: false,
+    },
+  ];
 }
