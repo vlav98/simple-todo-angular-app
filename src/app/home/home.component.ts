@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Todo } from '../todo';
+import { TodoComponent } from '../todo/todo.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoComponent],
   template: `
     <section>
       <form>
@@ -12,7 +14,16 @@ import { Component } from '@angular/core';
         <button class="primary" type="button">Search</button>
       </form>
     </section>
+    <section>
+      <app-todo></app-todo>
+    </section>
   `,
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  todo: Todo = {
+    id: 1,
+    content: 'coder',
+    isDone: false,
+  };
+}
