@@ -15,7 +15,7 @@ import { TodoComponent } from '../todo/todo.component';
       </form>
     </section>
     <section>
-      <app-todo></app-todo>
+      <app-todo [todo]="todo"></app-todo>
     </section>
   `,
   styleUrls: ['./home.component.scss'],
