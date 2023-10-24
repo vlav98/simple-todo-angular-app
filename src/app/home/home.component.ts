@@ -24,6 +24,6 @@ export class HomeComponent {
   todo: Todo = {
     id: 1,
     content: 'coder',
-    isDone: false,
+    isDone: true,
   };
 }

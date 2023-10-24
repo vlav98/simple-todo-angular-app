@@ -6,7 +6,12 @@ import { Todo } from '../todo';
   selector: 'app-todo',
   standalone: true,
   imports: [CommonModule],
-  template: ` <p>todo works!</p> `,
+  template: `
+    <li class="todo">
+      <p class="todo-content">{{ todo.content }}</p>
+      <input type="checkbox" [checked]="todo.isDone" />
+    </li>
+  `,
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent {
